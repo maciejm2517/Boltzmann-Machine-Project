@@ -1,0 +1,10 @@
+\section{Testowanie sieci neuronowej}
+    \paragraph{}
+	Testowanie sieci neuronowej jest najłatwiejszym etapem algorytmu ograniczonej maszyny Bolzmanna. Najważniejsze jest, żeby było to przeprowadzone po
+    \textit{wytrenowaniu} maszyny przy pomocy danych treningowych. Otrzymany wynik algorytmu jest najbardziej przewidywaną odpowiedzią, która zadowoli
+    użytkownika. Testować maszynę Boltzmanna możemy, szukając ukryte neurony przy określonych danych testowych lub na odwrót.
+    \paragraph{}
+	Testowanie jest podobne do początkowego etapu trenowania maszyny boltzmanna. Dane użytkownika w postaci macierzy mnożymy przez wytrenowaną
+    macierz wag w celu szukania ukrytych neuronów, lub wytrenowaną, transponowaną macierz wag w celu szukania widocznych neuronów. Następie obliczamy
+    zero-jedynkowe prawdopodobieństwo na podstawie wyników mnożenia macierzy otrzymanych z funkcji sigmoid. Otrzymane dane są najbardziej zbliżone do
+    preferencji użytkownika według zadanych przedtem danych treningowych.

@@ -1,0 +1,36 @@
+\section{Trenowanie sieci neuronowej}
+    \paragraph{}
+        Trenowanie sieci neuronowej jest elementem, który ma na celu dopasowanie wag do odpowiednich danych wejściowych.
+        Obliczenia dokonują się na podstawie kontrastowej rozbieżności (ang. \textit{Constrastive divergance}), która ma na celu
+        dopasowanie wag przez różnice rzeczywistego wyniku działania algorytmu z "wirtualnym" wynikiem wygenerowanym na
+        podstawie danych wyuczonych przez algorytm. Całość jest ograniczana przez tzw. współczynnik uczenia, który mówi
+        nam o ile algorytm powienien zmniejszyć różnicę otrzymaną z CD. Etap trenowania następuje w określonej liczbie iteracji,
+        które w algorytmach sztucznej inteligencji nazywane są epokami(ang. \textit{epochs}).
+
+    \paragraph{}
+       Operacje trenowania macierzy najwygodniej przedstawić na macierzach. Za pomocą operacji transpozycji czy mnożenia
+       macierzowego można zaoszczdzić sporo czasu na opracowywanie algorytmu RBM. Do treningu będzie potrzebna funkcja sigmoid,
+       która przyjmuje wartości od 0 do 1,  a zmiana pomiędzy nimi następuje dla argumentów bliskich zeru.
+
+    \paragraph{}
+	 Dodatnia faza kontrastowej rozbieżności jest obliczana za pomocą mnożenia macierzowego danych treningowych i macierzy wag.
+	 Wynik tej operacji jest następnie przepuszczany przez funkcję sigmoid, która oblicza prawdopodibieństwo aktywacji danego ukrytego neuronu.
+
+    \paragraph{}
+	 Ujemna faza kontrastowej rozbieżności jest obliczana za pomocą mnożenia uzyskanych ukrytych neuronów z transponowaną
+	 macierzą wag. Wynik tej operacji jest następnie przepuszczany przez funkcję sigmoid, która oblicza prawdopodibieństwo aktywacji
+     wirtualnych widocznych neuronów. Nie muszą one być identyczne z naszymi danymi treningowymi.
+
+    \paragraph{}
+	 Do aktualizacji wag za pomocą kontrastowej rozbieżności potrzebujemy danych treningowych wymnożonych przez macierz aktywacji
+	 oraz macierzy wirtualnych danych treningowych (obliczonych przez nasz algorytm) wymnożonej przez ich macierzy aktywacji.
+	 Różnicę tych macierzy mnożymy przez współczynnik uczenia, a każdy element macierzy dzielimy przez liczbę wszystkich wierszy danych treningowych.
+
+    \paragraph{Uwagi}
+	 Wektor biasów został tutaj umieszczony wertykalnie oraz horyzontalnie obok macierzy wag.
+	 Dzięki takiemu zastosowaniu możemy używać wektora biasów tylko przez mnożenie macierzy oraz jej transpozycję.
+	 Dodatkowo biasy są w każdej iteracji poprawiane do wartości 1, żeby nie zostały zaburzone przez operację funkcji sigmoid.
+
+    \paragraph{}
+	 Wagi są wybierane losowo. Powoduje to czasami otrzymanie odwrotnych wyników przy następnym testowaniu maszyny.
+	 Jednak ze wzlędu na brak warunków początkowych dla wag dla naszego przykładu możemy założyć, że dane testowe są zgodne z losowymi przykładami wag.

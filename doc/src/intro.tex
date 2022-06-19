@@ -1,0 +1,20 @@
+\section{Wstęp}
+    \paragraph{Ograniczona maszyna boltzmanna}
+    to sieć neuronowa oparta w pewnym stopniu na prawdopodobieństwie, składająca się z 2 warstw;
+    \textit{warstwy widocznej}, której wartości są znane i ustawiamy je samodzielnie oraz z \textit{warstwy ukrytej}
+    czyli wartości których nie znamy i próbujemy nauczyć tą sieć. Dodatkowo przy każdej
+    aktywacji takiego neuronu dodawana jest \textit{jednostka odchylenia}, która jest
+    stała dla każdego wejścia.
+
+    \paragraph{}
+        Ważną charakterystyką ograniczonej maszyny boltzmanna jest brak komunikacji pomiędzy węzłami na tym
+        samym poziomie, każdy węzeł działa niezależnie od sąsiadów, węzeł z warstwy widocznej
+        przekazuje swój wynik do każdego węzła z warstwy ukrytej. Pozwala to uniknąć zaburzeń neuronów związanych
+        ze klasyfikacją danych wejściowych z innymi danymi wejściowymi. Dodatkowo możemy przez to używać bardziej
+        zaawansowanych algorytmów uczenia takich jak rozbieżność kontrastowa.
+    \paragraph{}
+	    Ograniczoną maszynę Boltzmanna, jak każdą inną sieć neuronową możemy podzielić na kilka etapów
+        obliczeniowych. Pierwszym z nich jest znalezienie macierzy wag - trenowanie sieci neuronowej.
+        Drugim etapem jest testowanie na postawie innych danych oraz znalezienie odpowiednich cech jakie
+        wyróżnił wytrenowany przez nas algorytm. Ograniczona maszyna Boltzmanna pozwala nam równieć szukać
+        widocznych neuronów (danych które zwykle wprowadza użytkownik) posiadając tylko neurony ukryte.
